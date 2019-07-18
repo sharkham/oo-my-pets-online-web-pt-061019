@@ -71,6 +71,10 @@ class Owner
 
     pet = dogs.find {|d| d.name == pet_name} || cats.find {|c| c.name == pet_name}
     pet.mood = "nervous"
+
+    #remove by name - use .delete_if
+    #should be able to detect which class it is to use which array to remove from
+    binding.pry
   end
 
   def list_pets
