@@ -69,8 +69,8 @@ class Owner
     #pet_name is a string, need to find which pet instance has this name
     #iterate over both arrays
 
-    dogs.find {|d| d.name == pet_name} || cats.find {|c| c.name == pet_name}
-
+    pet = dogs.find {|d| d.name == pet_name} || cats.find {|c| c.name == pet_name}
+    pet.mood = "nervous"
   end
 
   def list_pets
