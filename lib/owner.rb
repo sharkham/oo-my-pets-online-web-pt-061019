@@ -63,7 +63,15 @@ class Owner
     self.dogs.clear
   end
 
-  #challenge: try to come back to this and write a method that sells each pet by name 
+  #challenge: try to come back to this and write a method that sells each pet by name
+
+  def sell_pet_by_name(pet_name)
+    #pet_name is a string, need to find which pet instance has this name
+    #iterate over both arrays
+
+    dogs.find {|d| d.name == pet_name} || cats.find {|c| c.name == pet_name}
+
+  end
 
   def list_pets
     "I have #{self.dogs.count} dog(s), and #{self.cats.count} cat(s)."
