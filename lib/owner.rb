@@ -74,7 +74,11 @@ class Owner
 
     #remove by name - use .delete_if
     #should be able to detect which class it is to use which array to remove from
-    binding.pry
+    if pet.class == Dog
+      self.dogs.delete_if {|d| d == pet}
+    elsif pet.class == Cat
+      self.cats.delete_if {|c| c == pet}
+    end
   end
 
   def list_pets
