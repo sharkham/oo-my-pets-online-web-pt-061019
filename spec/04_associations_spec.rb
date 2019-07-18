@@ -129,6 +129,20 @@ describe "Associations" do
         expect(fido.mood).to eq("nervous")
         expect(tabby.mood).to eq("happy")
       end
+      it "can sell one pet, which leaves the pet without an owner" do 
+        fido = Dog.new("Fido", @owner)
+        tabby = Cat.new("Tabby", @owner)
+
+        [fido, tabby].each {|o| o.mood = "happy" }
+
+        @owner.sell_pet_by_name("Fido")
+
+        expect(fido.owner).to be(nil)
+        expect(tabby.owner).to eq(@owner)
+
+        expect(@owner.cats.count).to eq(1)
+        expect(@owner.dogs.count).to eq(0)
+      end 
     end
 
     describe "#list_pets" do
