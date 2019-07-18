@@ -71,7 +71,7 @@ class Owner
 
     pet = dogs.find {|d| d.name == pet_name} || cats.find {|c| c.name == pet_name}
     pet.mood = "nervous"
-
+    pet.owner = nil 
     #remove by name - use .delete_if
     #should be able to detect which class it is to use which array to remove from
     if pet.class == Dog
