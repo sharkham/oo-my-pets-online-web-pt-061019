@@ -117,8 +117,8 @@ describe "Associations" do
       end
     end
 
-    describe "#sell_pet_by_name" do 
-      it "can sell an individual pet by name, which makes it nervous" do 
+    describe "#sell_pet_by_name" do
+      it "can sell an individual pet by name, which makes it nervous" do
         fido = Dog.new("Fido", @owner)
         tabby = Cat.new("Tabby", @owner)
 
@@ -128,8 +128,8 @@ describe "Associations" do
 
         expect(fido.mood).to eq("nervous")
         expect(tabby.mood).to eq("happy")
-      end 
-    end 
+      end
+    end
 
     describe "#list_pets" do
       it 'can list off its pets' do
